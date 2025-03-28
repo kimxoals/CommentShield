@@ -1,9 +1,10 @@
-version: "3.9"
+
 services:
   backend:
-    build: .
+    build: ./backend
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
+      - ./backend:/app        # Mount your code for live updates
+      - /app/node_modules     # Keeps container's node_modules isolated
     restart: unless-stopped
